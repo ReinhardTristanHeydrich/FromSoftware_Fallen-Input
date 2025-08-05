@@ -1,0 +1,20 @@
+[package]
+name        = "fromsoftware_fallen-input"
+version     = "0.0.0"
+edition     = "2024"
+description = "Elden Ring mod add more options to the user's controls."
+authors     = ["Charlie's Boyfriend [Reinhard]"]
+repository  = "https://github.com/ReinhardTristanHeydrich/FromSoftware_Fallen-Input"
+
+[lib]
+name = "fromsoftware_fallen_input++"
+crate-type = ["cdylib"]
+
+[dependencies]
+#inputbot = "0.6.0"
+inputbot = { git = "https://github.com/obv-mikhail/InputBot", branch = "develop" }
+winapi = {version = "0.3.9", features = ["winuser", "processthreadsapi", "libloaderapi"]}
+
+[[bin]]
+name = "fromsoftware_fallen-input++"
+path = "src/lib.rs"
