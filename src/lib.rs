@@ -16,20 +16,17 @@ pub unsafe extern "C" fn DllMain(hmodule: usize, reason: u32) -> bool {
     // Bind your caps lock key to a function that starts an autoclicker.
     // Just using an exemple from InputBot's Repository's ReadMe for testing.
     Numpad0Key.bind(move || {
-        while (Numpad0Key.is_toggled() && window::is_focused()) {
+        while Numpad0Key.is_toggled() /*&& window::is_focused()*/ {
             LeftButton.press();
             LeftButton.release();
-
+            println!("OK");
             sleep(Duration::from_millis(1000));
         }
     });
 
+    println!("Funcionando");
     // Call this to start listening for bound inputs.
     inputbot::handle_input_events(false);
-
-    loop {
-        sleep(Duration::from_secs(1));
-    }
     });
     //==========================================
     true
