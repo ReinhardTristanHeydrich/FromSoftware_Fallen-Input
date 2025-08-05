@@ -12,6 +12,7 @@ pub unsafe extern "C" fn DllMain(hmodule: usize, reason: u32) -> bool {
     if reason != GAME_INJECTION {return true;}
     DisableThreadCalls(hmodule as *mut _);
     //==========================================
+    std::thread::spawn(|| {
     // Bind your caps lock key to a function that starts an autoclicker.
     // Just using an exemple from InputBot's Repository's ReadMe for testing.
     Numpad0Key.bind(move || {
@@ -25,6 +26,7 @@ pub unsafe extern "C" fn DllMain(hmodule: usize, reason: u32) -> bool {
 
     // Call this to start listening for bound inputs.
     inputbot::handle_input_events(false);
+    });
     //==========================================
     true
 }
