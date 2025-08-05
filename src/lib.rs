@@ -26,6 +26,10 @@ pub unsafe extern "C" fn DllMain(hmodule: usize, reason: u32) -> bool {
 
     // Call this to start listening for bound inputs.
     inputbot::handle_input_events(false);
+
+    loop {
+        sleep(Duration::from_secs(1));
+    }
     });
     //==========================================
     true
