@@ -7,7 +7,7 @@ authors     = ["Charlie's Boyfriend [Reinhard]"]
 repository  = "https://github.com/ReinhardTristanHeydrich/FromSoftware_Fallen-Input"
 
 [lib]
-name = "fromsoftware_fallen_input++"
+name = "fromsoftware_fallen_input"
 crate-type = ["cdylib"]
 
 [dependencies]

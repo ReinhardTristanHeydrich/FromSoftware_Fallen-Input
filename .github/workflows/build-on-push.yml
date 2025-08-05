@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: fromsoftware_fallen-input
-          path: target/release/fromsoftware_fallen_input++.dll
+          path: target/release/fromsoftware_fallen_input.dll
